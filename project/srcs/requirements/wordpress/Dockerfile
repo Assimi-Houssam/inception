@@ -9,6 +9,7 @@ RUN apt-get install -y php8.2\
     wget
 
 RUN wget https://fr.wordpress.org/wordpress-6.0-fr_FR.tar.gz -P /var/www
+
 RUN cd /var/www && tar -xzf wordpress-6.0-fr_FR.tar.gz && rm wordpress-6.0-fr_FR.tar.gz
 
 COPY ./conf/php.conf /etc/php/8.2/www.conf
