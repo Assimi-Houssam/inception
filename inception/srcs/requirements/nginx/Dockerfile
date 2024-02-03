@@ -16,7 +16,6 @@ COPY conf/nginx.conf /etc/nginx/nginx.conf
 RUN chmod 755 /var/www/
 RUN chown -R www-data:www-data /var/www/
 
-EXPOSE 443
 CMD ["nginx", "-g", "daemon off;"]
 
 

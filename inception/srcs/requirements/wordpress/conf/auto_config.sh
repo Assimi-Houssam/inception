@@ -19,8 +19,12 @@ if [ ! -f "/var/www/wordpress/wp-config.php" ]; then
         --admin_password=${WORDPRESS_ADMIN_PASSWD} \
         --admin_email=${WORDPRESS_ADMIN_EMAIL}
 
+    wp user create --allow-root \
+        ${NORMAL_USER_NAME} \
+        ${NORMAL_USER_EMAIL} \
+        --role=editor \
+        --user_pass=${NORMAL_USER_PASSWD}
 
-    #changes the ownership of the "/var/www//" directory and all its contents to the user and group 'www-data', allowing the web server to have appropriate permissions to read, write, and execute files within the directory.
     sleep 2
     chown -R www-data:www-data /var/www/wordpress
     chmod -R 777 /var/www/wordpress

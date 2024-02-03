@@ -7,7 +7,7 @@ RUN apt-get install -y mariadb-server
 RUN mkdir -p /var/run/mysqld
 RUN chmod 777 /var /var/run /var/run/mysqld /run/mysqld /var/lib/mysql
 
-COPY ./tools/s.sh /
+COPY ./conf/s.sh /
 
 RUN mysql_install_db --user=mysql --datadir=/var/lib/mysql --skip-test-db
 
